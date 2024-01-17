@@ -1,0 +1,88 @@
+#creating 1st  DEPLOYMENT where 2 Images will have each 4 replicas created and present inside 1 POD named "nodejs-app".
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-swapna-Mern
+spec:
+  selector:
+    matchLabels:
+      app: frontend-swapna-Mern
+  template:
+    metadata:
+      labels:
+        app: frontend-swapna-Mern
+    spec:
+      containers:
+      - name: frontend-st
+        image: public.ecr.aws/c3w1m1q2/frontend-st:latest 
+        ports:
+        - containerPort: 3000
+  replicas: 2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-swapna-Mern
+spec:
+  selector:
+  replicas: 2
+    matchLabels:
+      app: backend-swapna-Mern
+  template:
+    metadata:
+      labels:
+        app: backend-swapna-Mern
+    spec:
+      containers:
+      - name: profileservice-be
+        image: public.ecr.aws/c3w1m1q2/profileservice-be 
+        ports:
+        - containerPort: 3002
+      # env:
+      # - name: MONGO_URL
+      #   value:"url" 
+      - name: helloservice-be
+        image: public.ecr.aws/c3w1m1q2/helloservice-be 
+        ports:
+        - containerPort: 3001
+---
+# create a "LoadBalancer" Typed-SERVICE named "nodejs-app-service" for this cluster, where these 4 PODs can talk to traffic outside the cluster
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-swapna-Mern-service
+spec:
+  selector:
+    app: frontend-swapna-Mern
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: profileservice-be-service
+spec:
+  selector:
+    app: backend-swapna-Mern
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3002
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: helloservice-be-service
+spec:
+  selector:
+    app: backend-swapna-Mern
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3001
+  type: LoadBalancer
