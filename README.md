@@ -23,12 +23,36 @@ Create an EC2 and make below Configures in it.<br>
 - Write Dockerfile for Frontend and Backend Microservices to create an Image.
   Dockerfile For Frontend code.
   ```
+  FROM node:18
+  WORKDIR /frontend
+  COPY . /frontend
+  RUN npm install
+  EXPOSE 3000
+  CMD [ "npm","start" ]
   ```
   Dockerfile for Backend code. Our Backend has 2 serives(/helloserive & /profileservice).
   ```
+  *****helloservice*****
+  FROM node:18
+  WORKDIR /helloservice
+  COPY . /helloservice/
+  RUN npm install
+  EXPOSE 3001
+  CMD [ "node","index.js" ]
+
+  *****profileservice*****
+  FROM node:18
+  WORKDIR /profileservice
+  COPY . /profileservice/
+  RUN npm install
+  COPY . .
+  EXPOSE 3002
+  CMD [ "node","index.js" ]
   ```
-- Create an Docker-Compose.yml file.
+- you can also create an Docker-Compose.yml file, to run and create all three images at same time. 
   ```
+  Sudo apt docker-compose = to install docker compose
+  docker-compose build = to create images using docker compose
   ```
   
 ## Create 3 Repositories in AWS ECR to Push the docker images into it respectively:
