@@ -120,9 +120,11 @@ Create an EC2 and make below Configures in it.<br>
 - Create an SNS Topic and Add notification/Create a Subscription to your email address and subscribe it.
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/d246bc74-79c0-4089-aac6-605de013c940)
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/b16b0ab4-f719-4768-81d0-cbfcc487bdad)
+  
 - To confirm your Subscription go to your email and confirm the subcription and you'll see the status will move to from "pending subscription".
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/a6f98579-8e84-4f70-b882-f79ffc176c3f)
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/d0bae96f-ef07-49f7-8f9a-4d7360460b17)
+  
 - Now, Create an Alarm from Cloudwatch, by selecting your POD & "POD_Status_failed" metric, to recieve Alerts when 1 or more containers failed.
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/4b2556e8-d071-441b-ae0a-e00dd8b74503)
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/e3f27d60-d868-4036-960d-87881c38e1df)
