@@ -94,7 +94,7 @@ Create an EC2 and make below Configures in it.<br>
   kubectl get po -w = check pods
   kubectl get services --watch = check services
   ```
-![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/a5a3e143-b668-4629-a566-1b2ed5188801)
-![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/eb1ce8b0-abda-4618-9185-b36c2c7f0775)
-![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/0b8e70e4-6621-40e6-a9c5-6433952e7be8)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/a5a3e143-b668-4629-a566-1b2ed5188801)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/eb1ce8b0-abda-4618-9185-b36c2c7f0775)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/0b8e70e4-6621-40e6-a9c5-6433952e7be8)
 
