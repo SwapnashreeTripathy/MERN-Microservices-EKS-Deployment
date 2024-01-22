@@ -8,7 +8,8 @@
 3.	Push the MERN application source code to the CodeCommit repository.
 4.	Create a Jenkins Job for building and pushing Docker images to ECR.
 5.	Create an Amazon EKS cluster and Use Helm to deploy the code on EKS.
-6.	Setting up CloudWatch monitoring and Alarms for your MERN application.
+6.	Try to connect with Frontend and backend services using the DNS of Load Balancer from browser.
+7.	Setting up CloudWatch monitoring and Alarms for your MERN application.
 
 ## Prerequisites
 Create an EC2 and make below Configures in it.<br>
@@ -97,4 +98,19 @@ Create an EC2 and make below Configures in it.<br>
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/a5a3e143-b668-4629-a566-1b2ed5188801)
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/eb1ce8b0-abda-4618-9185-b36c2c7f0775)
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/0b8e70e4-6621-40e6-a9c5-6433952e7be8)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/b06357aa-0c69-4426-a2da-002855a1ae96)
+
+## Try to connect with Frontend and backend services using the DNS of Load Balancer from browser:
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/fe07f8b6-2b9d-47e4-afd0-1aef5244fbec)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/48b9b1e4-f693-46aa-9d63-c1a82708f7fc)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/77aa23c5-5ea6-4c12-b475-cc1031d635fe)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/7b6dfa24-6d2b-4cf8-8a3b-4b54238144de)
+
+
+## Setting up CloudWatch monitoring and Alarms for your MERN application:
+- To have logs monitored by Cloudwatch for all of the componets of the EKS cluster, let's install Cloudwatch from "Add-ons" on EKS this Cluster.<br>
+  so, `CloudWatch` Agent will get installed in each Node running iside the Cluster & it’ll also `Enable Container Insights` in the Cluster so that Cloudwatch will monitor all the Container   
+  Insights.<br>
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/dfd53508-39ed-4316-bad4-2d555ee5c9c3)
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/c64bd93f-1f4f-41ce-a8a6-cf506884cec1)
 
