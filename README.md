@@ -11,12 +11,12 @@
 6.	Setting up CloudWatch monitoring and Alarms for your MERN application.
 
 ## Prerequisites
-Create an EC2 and make below Configures in it. 
-2. Install & configure aws-cli
-3. Install Jenkins
-4. Install docker
-5. Install EKSCTL
-6. Install Kubectl
+Create an EC2 and make below Configures in it.<br>
+2. Install & configure aws-cli<br>
+3. Install Jenkins<br>
+4. Install docker<br>
+5. [Install EKSCTL](https://eksctl.io/installation/)<br>
+6. [Install Kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)<br>
 
 ## Containerize your microservice application using docker:
 - Write Dockerfile for Frontend and Backend Microservices to create an Image.
@@ -55,7 +55,11 @@ Create an EC2 and make below Configures in it.
     ```
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/a8039be7-76c1-48f8-ae74-fb8dc3f56ac6)
   ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/10333504-efe5-48ff-9e3b-4487a05784c0)
-
+  ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/70eb78a4-ef1e-42d5-80ab-ecb32008837d)
+## Create a Jenkins Job for building and pushing Docker images to ECR:
+****************************************WRITE HERE SWAPNA*********************************************************************************************************
+## Create an Amazon EKS cluster and Use Helm to deploy the code on EKS:
+- 
   
 
 
