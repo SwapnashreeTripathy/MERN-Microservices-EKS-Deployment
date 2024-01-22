@@ -59,9 +59,42 @@ Create an EC2 and make below Configures in it.<br>
 ## Create a Jenkins Job for building and pushing Docker images to ECR:
 ****************************************WRITE HERE SWAPNA*********************************************************************************************************
 ## Create an Amazon EKS cluster and Use Helm to deploy the code on EKS:
-- 
+- Use the below `deployment.yml` code or `helm chart code` to Create EKS cluster in your AWS region.
+  *****************Give here link of deployment.yml file********************************************************************************************************
+  ***********************Give here helm.yaml file**************************************************************************************************************
+- in this yaml file, We are creating 2 different PODs with 2 Replicas of each. Our Backend POD will have 2 containers running inside it and Frontend POD will have 1 Container.
+- We are also creating 2 different `load balancer` services for backend and fronetend PODS to connect with the outside traffic.
+- Now let's run the below commands to create the EKS cluster with region as `Oregeon`.
   
+ ```
+  eksctl create cluster --name swapna-eks-mern-deployment --region us-west-2 --nodegroup-name swapna-eks-workernodess --node-type t3.medium --nodes 2 --nodes-min 1 --nodes-max 3
 
-
-
+  ################################defining the command################################
+  eksctl create cluster 
+  --name swapna-eks-mern-deployment <name of your Cluster>
+  --region us-west-2  <aws region where you want your cluster to create>
+  --nodegroup-name swapna-eks-workernodess<define nodegroup/workernode name> 
+  --node-type t3.medium <type of EC2 instance/workernode>
+  --nodes 2 <desired number of nodes to run>
+  --nodes-min 1 
+  --nodes-max 3
+```
+- To update kube-config file.
+  ```
+  aws eks --region us-west-2 update-kubeconfig --name swapna-eks-mern-deployment
+  ```
+- To run the Deployment.yml file.
+  ```
+  kubctl Apply -f deploy.yml
+  ```
+- EKS takes some time to create EKS cluster and all the reatled nodes , so you can view them by going to AWS EKS dashboard or you can run following command to view the same information.
+  ```
+  kubctl get deployments = to check created deployment
+  kubectl get nodes -o wide   = To Check the information about the “NODE”
+  kubectl get po -w = check pods
+  kubectl get services --watch = check services
+  ```
+![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/a5a3e143-b668-4629-a566-1b2ed5188801)
+![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/eb1ce8b0-abda-4618-9185-b36c2c7f0775)
+![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/0b8e70e4-6621-40e6-a9c5-6433952e7be8)
 
