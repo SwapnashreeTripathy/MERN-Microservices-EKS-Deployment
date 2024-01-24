@@ -72,8 +72,8 @@ Create an EC2 and make below Configures in it.<br>
     ```
     git config --global credential.helper '!aws codecommit credential-helper $@'
     git config --global credential.UseHttpPath true
-    git init<br>
-    git  add .<br>
+    git init
+    git  add .
     git commit -m "comment"
     git remote add codecommit <httprepo-of-codcommit>
     git git push codecommit main(here,main refers to the branch)
