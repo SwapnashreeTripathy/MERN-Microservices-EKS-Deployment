@@ -13,7 +13,9 @@ Let's delve into the project's detailed steps.
 5.	Create an Amazon EKS cluster and Use Helm to deploy the code on EKS.
 6.	Try to connect with Frontend and backend services using the DNS of Load Balancer from browser.
 7.	Setting up CloudWatch monitoring and Create Alarms using SNS.
+   
 <video src="Untitled%20design%20(2).mp4" controls title="Title"></video>
+
 ## Prerequisites
 Create an EC2 and make below Configures in it.<br>
 2. Install & configure aws-cli<br>
