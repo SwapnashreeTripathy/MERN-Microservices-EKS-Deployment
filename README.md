@@ -20,8 +20,20 @@ Let's delve into the project's detailed steps.
 ## Prerequisites
 Create an EC2 and make below Configures in it.<br>
 2. Install & configure aws-cli<br>
-3. Install Jenkins<br>
+   ```
+   curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   sudo apt install unzip
+   unzip awscliv2.zip
+   sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin --update
+   ```
+3. Install Jenkins in any EC2 server<br>
 4. Install docker<br>
+   ```
+   sudo apt-get update<br>
+   sudo apt install docker.io<br>
+   docker ps<br>
+   sudo chown $USER /var/run/docker.sock<br>
+   ```
 5. [Install EKSCTL](https://eksctl.io/installation/)<br>
 6. [Install Kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)<br>
 
