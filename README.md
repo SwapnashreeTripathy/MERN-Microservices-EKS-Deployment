@@ -90,9 +90,9 @@ Create an EC2 and make below Configures in it.<br>
 ## Create a Jenkins Job for building and pushing Docker images to ECR:
 
 ## Create an Amazon EKS cluster and Use Helm to deploy the code on EKS:
-- Use the below `deployment.yml` code or `helm chart code` to Create EKS cluster in your AWS region.
-  *****************Give here link of deployment.yml file********************************************************************************************************
-  ***********************Give here helm.yaml file**************************************************************************************************************
+- Use the below `deployment.yml` code or `helm chart code` to Create EKS cluster in your AWS region.<br>
+  [deployment.yml](https://github.com/SwapnashreeTripathy/MERN-Microservices-EKS-Deployment/blob/main/deployment.yml)<br>
+  [helmchart file](https://github.com/SwapnashreeTripathy/MERN-Microservices-EKS-Deployment/tree/main/helmchart)<br>
 - in this yaml file, We are creating 2 different PODs with 2 Replicas of each. Our Backend POD will have 2 containers running inside it and Frontend POD will have 1 Container.
 - We are also creating 2 different `load balancer` services for backend and fronetend PODS to connect with the outside traffic.
 - Now let's run the below commands to create the EKS cluster with region as `Oregeon`.
