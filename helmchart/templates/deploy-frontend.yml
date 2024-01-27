@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-swapna-Mern
+spec:
+  replicas: {{ .Values.frontend-swapna-Mern.replicacount }}
+  selector:
+    matchLabels:
+      app: frontend-swapna-Mern
+  template:
+    metadata:
+      labels:
+        app: frontend-swapna-Mern
+    spec:
+      containers:
+        - name: {{ .Values.frontend-swapna-Mern.image.name }}                                                              #".name" defines as = ".Values.containers.name"
+          image: "{{ .Values.frontend-swapna-Mern.image.repository }}/{{ .Values.frontend-swapna-Mern.image.name }}:{{ .Values.frontend-swapna-Mern.image.tag }}"                             ###{public.ecr.aws/c3w1m1q2}/{frontend-st}:{latest}
+          ports: 
+            - containerPort: {{ .Values.frontend-swapna-Mern.image.port }}                                                      #".port" defines as = ".Values.containers.port"
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-swapna-Mern-service
+spec:
+  selector:
+    app: frontend-swapna-Mern
+  ports:
+  - protocol: TCP
+    port: {{ .Values.frontend-swapna-Mern.service.port }}
+    targetPort: {{ .Values.frontend-swapna-Mern.image.port }}
+  type: {{ .Values.frontend-swapna-Mern.service.type }}               
+  

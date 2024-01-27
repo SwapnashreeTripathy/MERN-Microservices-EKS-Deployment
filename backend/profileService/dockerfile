@@ -1,7 +1,7 @@
 FROM node:18
 WORKDIR /profileservice
 COPY . /profileservice/
-RUN npm install mongoose@latest
+# RUN npm install mongoose@latest
 RUN npm install
 COPY . .
 EXPOSE 3002

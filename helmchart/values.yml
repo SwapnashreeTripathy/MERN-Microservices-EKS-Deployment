@@ -1,0 +1,52 @@
+#Use below format if you want to loop accross the Image values in 1 deployment.yml file
+# name: frontend-swapna-Mern
+# replicacount: 2
+
+# # containers:
+# # - name: frontend-st
+# #   repository: public.ecr.aws/c3w1m1q2
+# #   tag: latest
+# #   port: 3000
+# # - name: profileservice-be
+# #   repository: public.ecr.aws/c3w1m1q2
+# #   tag: latest
+# #   port: 3002
+# # - name: helloservice-be
+# #   repository: public.ecr.aws/c3w1m1q2
+# #   tag: latest
+# #   port: 3001
+
+#values of deployment
+
+frontend-swapna-Mern:
+  replicaCount: 2
+  image:
+    name: frontend-st
+    repository: public.ecr.aws/c3w1m1q2
+    tag: latest
+    port: 3000
+  service:
+    type: LoadBalancer
+    port: 80
+
+profileservice-be:
+  replicaCount: 2
+  image:
+    name: profileservice-be
+    repository: public.ecr.aws/c3w1m1q2
+    tag: latest
+    port: 3002
+  service:
+    type: LoadBalancer
+    port: 80
+
+helloservice-be:
+  replicaCount: 2
+  image:
+    name: helloservice-be
+    repository: public.ecr.aws/c3w1m1q2
+    tag: latest
+    port: 3001
+  service:
+    type: LoadBalancer
+    port: 80

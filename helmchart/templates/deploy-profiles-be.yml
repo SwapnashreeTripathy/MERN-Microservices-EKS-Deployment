@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profileservice-be
+spec:
+  replicas: {{ .Values.profileservice-be.replicacount }}
+  selector:
+    matchLabels:
+      app: profileservice-be
+  template:
+    metadata:
+      labels:
+        app: profileservice-be
+    spec:
+      containers:
+        - name: {{ .Values.profileservice-be.image.name }}                                                              
+          image: "{{ .Values.profileservice-be.image.repository }}/{{ .Values.profileservice-be.image.name }}:{{ .Values.profileservice-be.image.tag }}"                             ###{public.ecr.aws/c3w1m1q2}/{frontend-st}:{latest}
+          ports: 
+            - containerPort: {{ .Values.profileservice-be.image.port }}                                                      
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: profileservice-be-service
+spec:
+  selector:
+    app: profileservice-be
+  ports:
+  - protocol: TCP
+    port: {{ .Values.profileservice-be.service.port }}
+    targetPort: {{ .Values.profileservice-be.image.port }}
+  type: {{ .Values.profileservice-be.service.type }}               
+  

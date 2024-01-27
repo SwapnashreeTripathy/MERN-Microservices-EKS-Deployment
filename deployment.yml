@@ -15,9 +15,15 @@ spec:
     spec:
       containers:
       - name: frontend-st
-        image: public.ecr.aws/c3w1m1q2/frontend-st:latest 
+        image: public.ecr.aws/c3w1m1q2/frontend-st:latest
         ports:
         - containerPort: 3000
+        # env:
+  # - name: profileservice-be
+  #   value:"Backend-LD-DNS1"
+  # - name: helloservice-be
+  #   value:"Backend-LD-DNS2"
+
   replicas: 2
 ---
 apiVersion: apps/v1
@@ -25,8 +31,8 @@ kind: Deployment
 metadata:
   name: backend-swapna-Mern
 spec:
-  selector:
   replicas: 2
+  selector:
     matchLabels:
       app: backend-swapna-Mern
   template:
@@ -36,18 +42,19 @@ spec:
     spec:
       containers:
       - name: profileservice-be
-        image: public.ecr.aws/c3w1m1q2/profileservice-be 
+        image: public.ecr.aws/c3w1m1q2/profileservice-be
         ports:
         - containerPort: 3002
-      # env:
-      # - name: MONGO_URL
-      #   value:"url" 
       - name: helloservice-be
-        image: public.ecr.aws/c3w1m1q2/helloservice-be 
+        # env:
+        #   value:"url" 
+        # - name: MONGO_URL
+        image: public.ecr.aws/c3w1m1q2/helloservice-be
         ports:
         - containerPort: 3001
----
+
 # create a "LoadBalancer" Typed-SERVICE named "nodejs-app-service" for this cluster, where these 4 PODs can talk to traffic outside the cluster
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -56,9 +63,9 @@ spec:
   selector:
     app: frontend-swapna-Mern
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3000
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
   type: LoadBalancer
 ---
 apiVersion: v1
@@ -69,9 +76,9 @@ spec:
   selector:
     app: backend-swapna-Mern
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3002
+  - protocol: TCP
+    port: 80
+    targetPort: 3002
   type: LoadBalancer
 ---
 apiVersion: v1
@@ -82,7 +89,7 @@ spec:
   selector:
     app: backend-swapna-Mern
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 3001
+  - protocol: TCP
+    port: 80
+    targetPort: 3001
   type: LoadBalancer

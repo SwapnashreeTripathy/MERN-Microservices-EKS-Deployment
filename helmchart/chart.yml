@@ -1,0 +1,4 @@
+apiVersion: v2                                           # this is the version of the chart
+Name: swapna-mern-eksclusterHLM                          # This is name of the  Cluster
+Description: create eks cluster                                 # write some description about this cluster
+Version: 0.1.0                                           # this is the version of Helm

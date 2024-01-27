@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  helloservice-be:
+    build: 
+      context: ./backend/helloservice/
+      dockerfile: dockerfile
+    ports:
+      - "3001:3001"
+
+    
+  
+  profileservice-be:
+    build: 
+      context: ./backend/profileservice/
+      dockerfile: dockerfile
+    ports:
+      - "3002:3002"
+    # depends_on:
+    #   - helloservice-be
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - "3000:3000"
+    # depends_on:
+    #   - profileservice-be
