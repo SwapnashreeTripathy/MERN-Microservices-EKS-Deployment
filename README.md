@@ -14,7 +14,8 @@ Let's delve into the project's detailed steps.
 6.	Try to connect with Frontend and backend services using the DNS of Load Balancer from browser.
 7.	Setting up CloudWatch monitoring and Create Alarms using SNS.
    
-<video src="Untitled%20design%20(2).mp4" controls title="Title"></video>
+![diagram-export-1-27-2024-10_00_14-PM](https://github.com/SwapnashreeTripathy/MERN-Microservices-EKS-Deployment/assets/139486876/7e042702-d728-449a-a2be-d0cea2939ae9)
+
 
 ## Prerequisites
 Create an EC2 and make below Configures in it.<br>
