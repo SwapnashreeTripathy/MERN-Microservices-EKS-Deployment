@@ -29,10 +29,10 @@ Create an EC2 and make below Configures in it.<br>
 3. Install Jenkins in any EC2 server<br>
 4. Install docker<br>
    ```
-   sudo apt-get update<br>
-   sudo apt install docker.io<br>
-   docker ps<br>
-   sudo chown $USER /var/run/docker.sock<br>
+   sudo apt-get update
+   sudo apt install docker.io
+   docker ps
+   sudo chown $USER /var/run/docker.sock
    ```
 5. [Install EKSCTL](https://eksctl.io/installation/)<br>
 6. [Install Kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)<br>
