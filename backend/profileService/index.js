@@ -88,7 +88,7 @@ app.use(express.json());
 app.use(cors())
 
 
-app.get('/health', (req,res)=>{
+app.get('/profile/health', (req,res)=>{
     res.send({status: 'OK'})
 })
 
@@ -110,7 +110,7 @@ const userSchema = mongoose.Schema({
 })
 const User = mongoose.model('user', userSchema)
 
-app.post('/addUser', async (req,res)=>{
+app.post('/profile/addUser', async (req,res)=>{
     try {
         const { name, age } = req.body;
         if (!name || !age) {
@@ -134,7 +134,7 @@ app.post('/addUser', async (req,res)=>{
       }
 })
 
-app.get('/fetchUser', async (req,res)=>{
+app.get('/profile/fetchUser', async (req,res)=>{
     try {
         console.log(req.body);
         let user = await User.find({});
