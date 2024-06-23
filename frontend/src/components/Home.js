@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+const REACT_APP_HS_URL= process.env.REACT_APP_HS_URL;
+const REACT_APP_PS_URL= process.env.REACT_APP_PS_URL;
+
 function Home() {
   const [message, setMessage] = useState("");
   const [profile, setProfile] = useState([]);
