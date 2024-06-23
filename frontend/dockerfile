@@ -1,7 +1,9 @@
 FROM node:18
 WORKDIR /frontend
 COPY . /frontend
-RUN npm install
 COPY . .
+ENV REACT_APP_HS_URL $REACT_APP_HS_URL
+ENV REACT_APP_PS_URL $REACT_APP_PS_URL
+RUN npm install
 EXPOSE 3000
 CMD [ "npm","start" ]
