@@ -132,6 +132,11 @@ Create an EC2 and make below Configures in it.<br>
   ```
   aws eks --region us-west-2 update-kubeconfig --name swapna-eks-mern-deployment
   ```
+- Pass the env variables into the deployment.yaml file using the below command
+   ```
+   kubectl create secret generic mongo-secret --from-literal=MONGO_URL=" your mongo db url"
+   ```
+  
 - To run the Deployment.yml file.
   ```
   kubctl Apply -f deploy.yml
