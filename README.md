@@ -84,7 +84,13 @@ Create an EC2 and make below Configures in it.<br>
 - Once Policy is added to the IAM account,  Download the “HTTPS Git credentials for AWS CodeCommit”.<br>
   IAM --> users --> Security Credentials --> HTTPS Git credentials for AWS CodeCommit
 ![image](https://github.com/SwapnashreeTripathy/MERN-Microservices-EndtoEnd-Deployment/assets/139486876/2ceb3dca-f220-4d68-b378-40d7c446ffdd)
-- Create a Repository in Codecommit. 
+- Create a Repository in Codecommit.
+- Install the git-remote-codecommit in the EC2
+  ```
+  apt install python3-pip
+  pip install git-remote-codecommit
+  git clone codecommit::ap-south-1://<repo-name>
+  ```
 - Connect to EC2(Clone your codes from Github repo to EC2) & Push your MERN Application Code from EC2 to AWS Codecommit by following the below command.
   * Configure codecommit credentials on EC2 .
     ```
