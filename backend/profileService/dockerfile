@@ -4,5 +4,6 @@ COPY . /profileservice/
 # RUN npm install mongoose@latest
 RUN npm install
 COPY . .
-EXPOSE 3002
-CMD [ "node","index.js" ]
+ENV PORT=3002
+ENV MONGO_URL=MONGO_URL
+CMD [ "node","index.js" , "3002" ]
